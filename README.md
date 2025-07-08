@@ -1,22 +1,47 @@
-# SmartKart: GNN-Powered In-Store Recommendation & Pathfinding System
+<p align="center">
+  <img src="https://i.imgur.com/your-banner-image.png" alt="SmartKart Banner">
+  </p>
 
-This project presents SmartKart, a novel recommendation system designed for a retail environment. It leverages Graph Neural Networks (GNNs) on product co-purchase data to generate powerful item embeddings. These embeddings are then used in a hybrid recommendation engine that provides real-time suggestions and calculates the most efficient in-store path for shoppers to retrieve their recommended items.
+<h1 align="center">SmartKart: GNN-Powered In-Store Recommender</h1>
 
-The entire end-to-end workflow—from data simulation and model training to final recommendation logic—is detailed and executable in the primary Jupyter Notebook.
+<p align="center">
+  A novel recommendation system that combines Graph Neural Network embeddings with in-store smart pathfinding to enhance the retail shopping experience.
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT">
+    <img src="https://img.shields.io/github/languages/top/anmol0705/SmartKart-Recommendation-System" alt="Top Language">
+    <img src="https://img.shields.io/github/repo-size/anmol0705/SmartKart-Recommendation-System" alt="Repo Size">
+</p>
 
 ---
 
-## 🚀 Features
+## 🚀 Core Features
 
-* **End-to-End Walkthrough:** The project is consolidated into a single, comprehensive Jupyter Notebook (`SmartKart_Recommendation_System.ipynb`).
-* **GNN-Based Embeddings:** Utilizes a GraphSAGE model trained on the `ogbn-products` dataset to learn item embeddings that capture complex co-purchase relationships.
-* **High-Speed Similarity Search:** Implements Facebook AI's FAISS library for efficient, large-scale similarity searches to find related products in real-time.
-* **Hybrid Recommendation Engine:** A sophisticated API that combines candidates from embedding similarity and trending products, then re-ranks them based on cart contents, session activity, and inventory awareness.
-* **Smart Pathfinding Module:** Includes a `networkx`-based store graph module to find the most efficient in-store path for shoppers.
+* 🧠 **GNN-Based Embeddings:** Employs a **GraphSAGE** model on the `ogbn-products` dataset to generate powerful item embeddings from co-purchase data.
+* ⚡️ **High-Speed Similarity Search:** Integrates **Facebook AI's FAISS** library for efficient, real-time similarity searches to discover related products.
+* 🛍️ **Hybrid Recommendation Engine:** A dynamic API that sources candidates from both embedding similarity and trending items, then re-ranks them based on user context (cart, session) and inventory levels.
+* 🗺️ **Smart Pathfinding:** Includes a `networkx`-powered module to calculate the most efficient in-store route for a shopper to collect their recommended items.
+
+---
+
+## 🛠️ Technologies Used
+
+This project leverages a modern stack for graph machine learning and data science:
+
+* **Primary Language:** Python
+* **ML Frameworks:** PyTorch, PyTorch Geometric
+* **Core Libraries:** OGB, FAISS, NumPy, Pandas
+* **Pathfinding:** NetworkX
+* **Development Environment:** Jupyter Notebook
 
 ---
 
 ## 📂 Project Structure
+
+The repository is organized for clarity and ease of use, with the main workflow contained in the Jupyter Notebook.
+
+---
 
 ```
 SmartKart-GNN-Recommender/
@@ -30,72 +55,75 @@ SmartKart-GNN-Recommender/
         ├── store_graph.py                     # Defines and implements the smart store pathfinding.
         └── test_pathfinding.py                # Example usage of the pathfinding module.
 ```
+## ⚙️ Getting Started
 
----
+### Prerequisites
 
-## ⚙️ Installation
+* Python 3.8+
+* `pip` and `venv`
 
-To run the project, first clone the repository and install the necessary dependencies.
+### Installation
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/your-username/SmartKart-GNN-Recommender.git](https://github.com/your-username/SmartKart-GNN-Recommender.git)
-    cd SmartKart-GNN-Recommender
+    git clone [https://github.com/anmol0705/SmartKart-Recommendation-System](https://github.com/anmol0705/SmartKart-Recommendation-System)
+    cd SmartKart-Recommendation-System
     ```
 
-2.  **Create a virtual environment (recommended):**
+2.  **Create and activate a virtual environment:**
     ```bash
     python -m venv venv
-    source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
     ```
 
-3.  **Install Dependencies:**
-    This project requires specific PyTorch libraries. It's best to install these first.
+3.  **Install PyTorch and PyG Dependencies:**
+    It's crucial to install the correct versions for your system's architecture (CPU or GPU).
 
-    * **For CPU-only systems:**
+    * **For CPU-only:**
         ```bash
         pip install torch torch-scatter torch-sparse torch-cluster -f [https://data.pyg.org/whl/torch-2.1.0+cpu.html](https://data.pyg.org/whl/torch-2.1.0+cpu.html)
-        pip install -r requirements.txt
         ```
-    * **For GPU systems (example with CUDA 12.1):**
+    * **For GPU (example with CUDA 12.1):**
         ```bash
         pip install torch torch-scatter torch-sparse torch-cluster -f [https://data.pyg.org/whl/torch-2.1.0+cu121.html](https://data.pyg.org/whl/torch-2.1.0+cu121.html)
-        pip install -r requirements.txt
         ```
+
+4.  **Install remaining packages:**
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ---
 
 ## 🏃‍♀️ How to Run
 
-The entire project is designed to be run from the Jupyter Notebook.
+The entire project is designed to be executed from the primary Jupyter Notebook.
 
-**Start Jupyter Lab or Jupyter Notebook and open `notebooks/SmartKart_Recommendation_System.ipynb`.**
+> **Start Jupyter Lab or Jupyter Notebook and open `notebooks/SmartKart_Recommendation_System.ipynb`.**
 
 Running the cells sequentially will guide you through the entire process:
-1.  **Environment Setup:** Installs all necessary packages.
-2.  **Data Loading & Simulation:** Downloads the OGB dataset, creates a subgraph, and simulates user/product data.
-3.  **Model Training:** Defines and trains the GraphSAGE model to generate product embeddings.
-4.  **FAISS Indexing:** Builds a FAISS index for fast similarity lookups.
-5.  **Recommendation API:** Defines and tests the final recommendation function with multiple scenarios.
+1.  **Environment Setup**: Installs all packages.
+2.  **Data Loading & Simulation**: Downloads the OGB dataset and simulates user/product data.
+3.  **Model Training**: Trains the GraphSAGE model to generate embeddings.
+4.  **FAISS Indexing**: Builds a FAISS index for fast similarity lookups.
+5.  **Recommendation API**: Defines and tests the final recommendation function.
 
 ---
 
-## 🧠 Methodology
+## 🧠 Methodology Pipeline
 
-The recommendation system is built on a multi-stage pipeline detailed in the notebook:
+The recommendation system follows a multi-stage pipeline:
 
-1.  **Data Loading & Subgraphing:** The large `ogbn-products` graph (2.4M nodes) is loaded, and a smaller, manageable subgraph is created for efficient prototyping.
-
-2.  **GNN Training for Embeddings:** A GraphSAGE model is trained on the subgraph to learn product categories. Its penultimate layer generates rich 40-dimensional embeddings that place co-purchased products close to each other in vector space.
-
-3.  **FAISS Indexing:** The embeddings are indexed using `faiss.IndexFlatL2` for extremely fast nearest neighbor searches, enabling real-time similarity lookups.
-
-4.  **Hybrid Recommendation API:** The final `get_recommendations` function fetches candidates from similarity searches and trending products, then re-ranks them using session/cart relevance and inventory data.
+1.  **Data Loading & Subgraphing**: The large `ogbn-products` graph is loaded, and a smaller subgraph is created for efficient prototyping.
+2.  **GNN Training**: A GraphSAGE model is trained on the subgraph to predict product categories. Its penultimate layer generates rich 40-dimensional embeddings.
+3.  **FAISS Indexing**: The learned embeddings are indexed using `faiss.IndexFlatL2` to enable real-time nearest neighbor searches.
+4.  **Hybrid Recommendation**: The `get_recommendations` function fetches candidates from similarity searches and trending products, then re-ranks them using session/cart relevance and inventory data.
 
 ---
 
 ## 📞 Contact
 
-Your Name - [anmol752005@gmail.com](mailto:anmol752005@gmail.com)
+Anmol - [anmol752005@gmail.com](mailto:anmol752005@gmail.com)
 
-Project Link: [https://github.com/your-username/SmartKart-GNN-Recommender](https://github.com/your-username/SmartKart-GNN-Recommender)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-anmol-jain-blue)](https://www.linkedin.com/in/anmol-jain0705/)
+[![GitHub](https://img.shields.io/badge/GitHub-anmol0705-grey?logo=github)](https://github.com/anmol0705)
