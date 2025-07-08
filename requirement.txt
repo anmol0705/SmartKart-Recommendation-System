@@ -1,0 +1,12 @@
+torch
+ogb
+torch-geometric
+torch-scatter
+torch-sparse
+torch-cluster
+numpy
+pandas
+networkx
+matplotlib
+tqdm
+faiss-cpu
