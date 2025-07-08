@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.imgur.com/your-banner-image.png" alt="SmartKart Banner">
+  <img src="./assets/smartkart.png" alt="SmartKart Banner">
   </p>
 
 <h1 align="center">SmartKart: GNN-Powered In-Store Recommender</h1>
